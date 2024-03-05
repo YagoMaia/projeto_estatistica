@@ -77,7 +77,7 @@ class MetodosMatematicos():
             if c == 0:
                 fac.append(fr[0])
             else:
-                fac.append(fac[c-1] + fr[c])
+                fac.append(round(fac[c-1] + fr[c], 3))
         
         intervalos.append("Total")
         fi.append(sum(fi))
