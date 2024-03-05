@@ -14,6 +14,7 @@ class MetodosMatematicos():
         self.variancia = self.calcular_variancia()
         self.limite_inferior = self.calcular_limite_inferior()
         self.dados_tabela = self.montar_tabela()
+        self.li, self.lf = self.montar_listas_intervalos()
             
     def calcular_media(self):
         media = sum(self.dados)/self.tamanho_amostra
@@ -32,7 +33,7 @@ class MetodosMatematicos():
         return k
     
     def calcular_c(self):
-        c = self.amplitude / (self.k - 1)
+        c = round(self.amplitude / (self.k - 1), 2)
         return c
     
     def calcular_variancia(self):
@@ -82,6 +83,6 @@ class MetodosMatematicos():
         intervalos.append("Total")
         fi.append(sum(fi))
         fr.append(sum(fr))
-        fac.append("-")
+        fac.append(None)
         
         return {'Intervalos': intervalos, 'fi' : fi, 'fr' : fr, 'fac' : fac}

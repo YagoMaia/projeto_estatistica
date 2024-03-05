@@ -3,7 +3,7 @@ import pandas as pd
 from metodos import MetodosMatematicos
 import altair as alt
 
-dados = [21, 20, 20, 20, 28, 22, 22, 22, 21, 21, 21, 42, 23, 47, 53, 13, 19, 22, 17, 20, 20, 34, 34, 34]
+dados = [10,20,30,51,51,51,51,51, 10, 12, 15, 17, 20, 21, 25]
 
 tabela = MetodosMatematicos(dados)
 
@@ -17,10 +17,10 @@ dados_bar = tabela.dados_tabela
 
 del dados_bar['fac'], dados_bar['fr']
 dados_bar['fi'].pop(-1)
-dados_bar['Intervalos'].pop(-1)
+dados_bar['Intervalos'] = tabela.li
 
 df_bar = pd.DataFrame(dados_bar)
 
-bar = alt.Chart(df_bar).mark_bar().encode(y = "fi", x = "Intervalos").configure_axisX(labelAngle=0)
+bar = alt.Chart(df_bar).mark_bar(size=20).encode(y = alt.Y("fi", title = "Frequências"), x = "Intervalos")
 
 st.altair_chart(bar, use_container_width=True)
