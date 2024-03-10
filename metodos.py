@@ -52,8 +52,8 @@ class MetodosMatematicos():
         lista_intervalos_fim = []
         
         for b in range(0, self.k):
-            lista_intervalos_ini.append(self.limite_inferior + self.c*b)
-            lista_intervalos_fim.append(self.limite_inferior + self.c*(b+1))
+            lista_intervalos_ini.append(round(self.limite_inferior + self.c*b, 3))
+            lista_intervalos_fim.append(round(self.limite_inferior + self.c*(b+1), 3))
         
         return lista_intervalos_ini, lista_intervalos_fim
     
