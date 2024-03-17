@@ -7,6 +7,7 @@ class MetodosMatematicos():
         Iniciando a classe
         """
         self.dados = dados
+        self.novos_dados = []
         self.tamanho_amostra = len(self.dados)
         self.media = self.calcular_media()
         self.media = self.calcular_media()
@@ -105,6 +106,7 @@ class MetodosMatematicos():
             for valor in self.dados:
                 if li[c] <= valor < lf[c]:
                     cont_fi += 1
+                    self.novos_dados.append(li[c])
             fi.append(cont_fi)
             fr.append(round(cont_fi/self.tamanho_amostra, 3))
             intervalos.append(f"{li[c]} --| {lf[c]}")
