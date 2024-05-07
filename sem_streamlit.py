@@ -6,6 +6,8 @@ from metodos import MetodosMatematicos
 from random import randint
 #import os
 
+#PEDRO É LEGAL
+
 #dados = [10, 20, 30, 51, 51, 51, 51, 51, 10, 12, 15, 17, 20, 21, 25]
 dados = []
 
